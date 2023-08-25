@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+red.launch.additionalRobotArguments=-d output
+red.launch.environmentVariables={"PYTHONIOENCODING"\:"utf8"}
+red.validation.turnOff=true

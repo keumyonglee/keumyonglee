@@ -1,0 +1,11 @@
+*** Settings ***
+Resource            ../../../project/environment/library.robot
+
+
+
+*** Variables ***
+
+
+
+*** Keywords ***
+Set Deviceid

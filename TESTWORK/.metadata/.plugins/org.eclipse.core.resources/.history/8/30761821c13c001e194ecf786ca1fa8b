@@ -1,0 +1,12 @@
+*** Settings ***
+Resource           ../../../../project/environment/library.robot
+
+Suite Setup        Run Keywords    Register Keword to Run On Failure    Nothing
+...                    And    
+...                    And    
+...                    And        
+...                    And        
+...                    And        
+...                    And        
+...                    And        
+...                    And        

@@ -1,0 +1,4 @@
+*** Settings ***
+Resource            ../../environment/library.robot
+
+Suite Setup    Run Keyword    Register Keyword to Run On Failure

@@ -1,0 +1,41 @@
+*** Settings ***
+Resource           ../../environment/library.robot
+
+
+
+*** Variables ***
+${DEVICE_NAME}    R3CN1090L7Y
+${Web_APK_Plsu}   com.sec.android.app.sbrowser
+${APP_ACTIVITY}   .SBrowserMainActivity
+
+*** Keywords ***
+Verify Device Information
+    [Documentation]
+    ...    [Description]    Verify Device Information
+    ...    [Date]    2023.08.22
+    ...    [Author]    Keumyong.Lee
+    [Arguments]    ${device}
+    Log to Console    Verify Device Information
+    ${Device_Name}    Run Keyword    Shell Adb    getprop ro.product.model
+    ${Device_OS}      Run Keyword    Shell Adb    getprop ro.build.version.release
+    
+    ${Device_Name}    Run Keyword    Shell Adb
+    ${Device_Name}    Run Keyword    Shell Adb
+    ${Device_Name}    Run Keyword    Shell Adb
+    ${Device_Name}    Run Keyword    Shell Adb
+
+
+
+*** Test Cases ***
+Connect and Open App
+    # 사용자 정의 키워드로 디바이스 연결
+    Connect Device    ${DEVICE_NAME}
+    Log To Console    message1
+    Sleep     5s
+        
+    Open Application  ${Web_APK_Plsu}    ${APP_ACTIVITY}
+    Log To Console    message2
+    Sleep     10s
+
+
+

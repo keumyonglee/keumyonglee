@@ -1,0 +1,4 @@
+*** Settings ***
+Resource           ../../environment/library.robot
+
+Suite Setup        Run Keywords    Initial And Connect Device    ${Web_APK_Device_ID}    ${Web_APK_Devi

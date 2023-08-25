@@ -1,0 +1,46 @@
+*** Settings ***
+Resource           ../../environment/library.robot
+
+
+
+*** Variables ***
+
+
+
+*** Keywords ***
+Set Deviceid
+    [Documentation]
+    ...    [Description]    Set Deviceid
+    ...    [Author]    keumyong.lee
+    ...    [Date]    2023/08/17
+    [Arguments]    ${testdeviceid}
+    Log To Console    Set deviceid${testdeviceid}
+    Set Global Variable    ${videodeviceid}    ${testdeviceid}
+    
+Inital And Connect Device
+    [Documentation]
+    ...    [Description]    Inital And Connect Device
+    ...    [Author]    keumyong.lee
+    ...    [Date]    2023/08/17
+    [Arguments]    ${deviceid}    ${devicename}
+    Log To Console    init Uiautomator2, connect to device
+    ${del_status}    Run Keyword And Return Status    Delete ATX Agent After Cheking Android OS    ${deviceid}
+    
+
+
+Delete ATX Agent After Cheking Android OS
+    [Documentation]
+    ...    [Description]    Delete ATX Agent After Cheking Android OS
+    ...    안드로이드 OS가 12 이상인 경우  Atx Agent 파일을 삭제
+    ...    [Author]    keumyong.lee
+    ...    [Date]    2023/08/17
+    [Arguments]    ${deviceid}    
+    Log To Console    Delete ATX Agent After Cheking Android OS
+    Evalute    os.system("adb start-ser")    modules=os
+    
+
+
+
+
+
+

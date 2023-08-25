@@ -1,0 +1,7 @@
+*** Settings ***
+Resource           ../../environment/library.robot
+
+
+*** Test Cases ***
+APK Install
+    

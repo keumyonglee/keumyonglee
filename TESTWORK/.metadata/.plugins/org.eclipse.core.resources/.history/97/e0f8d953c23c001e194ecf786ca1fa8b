@@ -1,0 +1,12 @@
+*** Settings ***
+Resource            ../../environment/library.robot
+
+Suite Setup        Run Keywords    Register Keyword to Run
+...                    And    
+...                    And    
+...                    And        
+...                    And        
+...                    And        
+...                    And        
+...                    And        
+...                    And        

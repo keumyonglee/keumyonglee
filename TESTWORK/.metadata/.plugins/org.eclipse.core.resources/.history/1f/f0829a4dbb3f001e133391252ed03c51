@@ -1,0 +1,7 @@
+*** Settings ***
+Resource    ../variable/kewords/keywords.robot
+#WEB
+Resource    ../testscript/keywords/web/account.com_keywords.robot
+Resource    ../../testscript/keywords/web/Common_Web.robot
+# 모바일
+Resource    ../../keyword/mobile/Aphn_Common.robot

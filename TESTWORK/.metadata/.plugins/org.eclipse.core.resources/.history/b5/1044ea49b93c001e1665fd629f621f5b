@@ -1,0 +1,29 @@
+*** Settings ***
+Resource            ../../../../project/environment/library.robot
+
+
+
+*** Variables ***
+
+
+
+*** Keywords ***
+Set Country
+    [Documentation]
+    ...    [Description]    set country
+    ...    [Author]    keumyong.lee
+    ...    [Date]    2023/08/17
+    [Arguments]    ${country}
+    Log To Console    Set Country ${country}
+    Set Global Variable    ${nation}    ${country}
+    Register Keyword to Run ON Failure    Nothing
+
+
+Set Deviceid
+    [Documentation]
+    ...    [Description]    Set Deviceid
+    ...    [Author]    keumyong.lee
+    ...    [Date]    2023/08/17
+    [Arguments]    ${testdeviceid}
+    Log To Console    Set deviceid${testdeviceid}
+    Set Global Varible    ${videodeviceid}    ${testdeviceid}

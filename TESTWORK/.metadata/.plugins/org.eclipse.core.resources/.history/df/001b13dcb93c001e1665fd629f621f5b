@@ -1,0 +1,12 @@
+*** Settings ***
+Resource           ../../../project/environment/library.robot
+
+Suite Setup        Run Keywords    Set Country    ${Korea}
+...                    And    Set Deviceid        ${SAMSUNG_MEMBERS_DEVICES_ID_KR|
+...                    And    Inital And Connect Device    ${SAMSUNG_MEMBERS_DIVICE_ID_KR}    ${SAMSUNG_MEMBERS_DEVICE_NAME_KR}    
+...                    And        
+...                    And        
+...                    And        
+...                    And        
+...                    And        
+...                    And        

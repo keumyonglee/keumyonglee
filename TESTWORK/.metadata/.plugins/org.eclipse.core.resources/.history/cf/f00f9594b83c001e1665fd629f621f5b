@@ -1,0 +1,6 @@
+*** Variables ***
+#Country
+${nation}                  ${EMPTY}
+${id}                      ${EMPTY}
+${UnitedStates}            us
+${Korea}                   kr

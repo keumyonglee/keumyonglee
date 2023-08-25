@@ -1,0 +1,4 @@
+*** Settings ***
+Resource            ../../../../project/environment/library.robot
+
+Suite Setup        Run Keywords    Set Country    ${Korea}

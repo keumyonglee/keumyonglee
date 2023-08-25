@@ -1,0 +1,24 @@
+*** Settings ***
+Resource           ../../environment/library.robot
+
+
+
+*** Variables ***
+${DEVICE_NAME}    R3CN1090L7Y
+${Web_APK_Plsu}   com.sec.android.app.sbrowser
+${APP_ACTIVITY}   .SBrowserMainActivity
+
+*** Keywords ***
+
+*** Test Cases ***
+Connect and Open App
+    # 사용자 정의 키워드로 디바이스 연결
+    Connect Device    ${DEVICE_NAME}
+    Log To Console    message1
+    Sleep     5s
+        
+    Open Application  ${Web_APK_Plsu}    ${APP_ACTIVITY}
+    Log To Console    message2
+    Sleep     10s
+
+    Disconnect Device

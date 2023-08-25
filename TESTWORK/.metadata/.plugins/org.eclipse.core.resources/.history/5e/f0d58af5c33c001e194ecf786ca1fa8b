@@ -1,0 +1,5 @@
+*** Settings ***
+Resource            ../../environment/library.robot
+
+Suite Setup    Run Keyword    Resister Keyword to Run On Failure    Noting
+...                And      Initial And Connect Device

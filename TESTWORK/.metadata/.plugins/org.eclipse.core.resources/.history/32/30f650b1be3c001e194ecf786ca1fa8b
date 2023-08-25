@@ -1,0 +1,26 @@
+*** Settings ***
+Resource            ../../../../project/environment/library.robot
+
+
+
+*** Variables ***
+
+
+
+*** Keywords ***
+Set Deviceid
+    [Documentation]
+    ...    [Description]    Set Deviceid
+    ...    [Author]    keumyong.lee
+    ...    [Date]    2023/08/17
+    [Arguments]    ${testdeviceid}
+    Log To Console    Set deviceid${testdeviceid}
+    Set Global Variable    ${videodeviceid}    ${testdeviceid}
+    
+Inital And Connect Device
+    [Documentation]
+    ...    [Description]    Inital And Connect Device
+    ...    [Author]    keumyong.lee
+    ...    [Date]    2023/08/17
+    [Arguments]    ${deviceid}    ${testdeviceid}
+    Log To Console    init Uiautomator2, connect to device

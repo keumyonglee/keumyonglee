@@ -1,0 +1,7 @@
+*** Settings ***
+Resource           ../../environment/library.robot
+
+
+*** Test Cases ***
+단말연결
+    Connect Use Device

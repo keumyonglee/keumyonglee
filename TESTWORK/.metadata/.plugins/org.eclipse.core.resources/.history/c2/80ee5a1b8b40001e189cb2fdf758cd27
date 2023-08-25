@@ -1,0 +1,45 @@
+*** Settings ***
+Resource           ../../environment/library.robot
+
+
+
+*** Variables ***
+${DEVICE_NAME}    R3CN1090L7Y
+${Web_APK_Plsu}   com.sec.android.app.sbrowser
+${APP_ACTIVITY}   .SBrowserMainActivity
+
+${Device_Name}    ${EMPTY}
+${Device_OS}      ${EMPTY}
+
+*** Keywords ***
+Verify Device Information
+    [Documentation]
+    ...    [Description]    Verify Device Information
+    ...    [Date]    2023.08.22
+    ...    [Author]    Keumyong.Lee
+    [Arguments]    ${device}
+    Log to Console    Verify Device Information
+    ${Device_Name}    Run Keyword    Shell Adb    getprop ro.product.model
+    ${Device_OS}      Run Keyword    Shell Adb    getprop ro.build.version.release
+
+    ${Device_Name}    Run Keyword    Shell Adb    getprop ro.product.model
+    ${Device_OS}      Run Keyword    Shell Adb    getprop ro.product.model
+
+    Log to Console    ++++++++  device information  ++++++++++
+    Log to Console    Device Name : ${Device_Name}
+    Log to Console    Device_Serial : ${Device_OS}
+
+
+*** Test Cases ***
+Connect and Open App
+    Log To Console    Connect and Open App
+    Connect Device    ${DEVICE_NAME}
+    Verify Device Information
+    Sleep     5s
+     
+    Open Application  ${Web_APK_Plsu}    ${APP_ACTIVITY}
+    Log To Console    message2
+    Sleep     10s
+
+
+
