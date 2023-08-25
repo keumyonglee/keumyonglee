@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec format="ROBOT" generated="2023-08-22T06:17:57Z" lineno="4" name="MyUiautomatorLibrary" namedargs="true" scope="TEST" source="C:\Users\fbehd\Desktop\RED_0.9.5.20200724101746-win32.win32.x86_64\workspace\study\library\MyUiautomatorLibrary.py" specversion="2" type="LIBRARY">
+<version />
+<scope>test case</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for library ``MyUiautomatorLibrary``.</doc>
+<kw lineno="8" name="Connect Device">
+<arguments>
+<arg>device_name</arg>
+</arguments>
+<doc />
+</kw>
+<kw lineno="27" name="Disconnect Device">
+<arguments>
+</arguments>
+<doc />
+</kw>
+<kw lineno="11" name="Open Application">
+<arguments>
+<arg>package_name</arg>
+<arg>activity_name</arg>
+</arguments>
+<doc />
+</kw>
+<kw lineno="15" name="Open Notification">
+<arguments>
+</arguments>
+<doc />
+</kw>
+<kw lineno="32" name="Shell Adb">
+<arguments>
+<arg>command</arg>
+</arguments>
+<doc />
+</kw>
+<kw lineno="42" name="Shell Adb Keyword">
+<arguments>
+<arg>command</arg>
+</arguments>
+<doc />
+</kw>
+</keywordspec>
