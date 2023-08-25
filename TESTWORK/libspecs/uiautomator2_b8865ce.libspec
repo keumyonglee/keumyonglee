@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec format="ROBOT" generated="2023-08-21T07:26:46Z" lineno="1" name="uiautomator2" namedargs="true" scope="GLOBAL" source="C:\Python36\Lib\site-packages\uiautomator2\__init__.py" specversion="2" type="LIBRARY">
+<version />
+<scope>global</scope>
+<namedargs>yes</namedargs>
+<doc>::Timeout
+
+atx-agent:ReverseProxy use http.DefaultTransport. Default Timeout: 30s
+
+|-- Dial --|-- TLS handshake --|-- Request --|-- Resp.headers --|-- Respose.body --|
+|------------------------------ http.Client.Timeout -------------------------------|
+
+Refs:
+    - https://golang.org/pkg/net/http/#RoundTripper
+    - http://colobu.com/2016/07/01/the-complete-guide-to-golang-net-http-timeouts</doc>
+<kw lineno="1910" name="Connect">
+<arguments>
+<arg>addr=None</arg>
+</arguments>
+<doc>Args:
+    addr (str): uiautomator server address or serial number. default from env-var ANDROID_DEVICE_IP
+
+Returns:
+    Device
+
+Raises:
+    ConnectError
+
+Example:
+    connect("10.0.0.1:7912")
+    connect("10.0.0.1") # use default 7912 port
+    connect("http://10.0.0.1")
+    connect("http://10.0.0.1:7912")
+    connect("cff1123ea")  # adb device serial number</doc>
+</kw>
+<kw lineno="1936" name="Connect Adb Wifi">
+<arguments>
+<arg>addr</arg>
+</arguments>
+<doc>Run adb connect, and then call connect_usb(..)
+
+Args:
+    addr: ip+port which can be used for "adb connect" argument
+
+Raises:
+    ConnectError</doc>
+</kw>
+<kw lineno="1957" name="Connect Usb">
+<arguments>
+<arg>serial: str = None</arg>
+<arg>init: bool = False</arg>
+</arguments>
+<doc>Args:
+    serial (str): android device serial
+
+Returns:
+    Device
+
+Raises:
+    ConnectError</doc>
+</kw>
+<kw lineno="1977" name="Connect Wifi">
+<arguments>
+<arg>addr: str</arg>
+</arguments>
+<doc>Args:
+    addr (str) uiautomator server address.
+
+Returns:
+    Device
+
+Raises:
+    ConnectError
+
+Examples:
+    connect_wifi("10.0.0.1")</doc>
+</kw>
+<kw lineno="180" name="Deprecated" source="C:\Python36\Lib\site-packages\deprecated\classic.py">
+<arguments>
+<arg>*args</arg>
+<arg>**kwargs</arg>
+</arguments>
+<doc>This is a decorator which can be used to mark functions
+as deprecated. It will result in a warning being emitted
+when the function is used.
+
+**Classic usage:**
+
+To use this, decorate your deprecated function with **@deprecated** decorator:
+
+.. code-block:: python
+
+   from deprecated import deprecated
+
+
+   @deprecated
+   def some_old_function(x, y):
+       return x + y
+
+You can also decorate a class or a method:
+
+.. code-block:: python
+
+   from deprecated import deprecated
+
+
+   class SomeClass(object):
+       @deprecated
+       def some_old_method(self, x, y):
+           return x + y
+
+
+   @deprecated
+   class SomeOldClass(object):
+       pass
+
+You can give a *reason* message to help the developer to choose another function/class,
+and a *version* number to specify the starting version number of the deprecation.
+
+.. code-block:: python
+
+   from deprecated import deprecated
+
+
+   @deprecated(reason="use another function", version='1.2.0')
+   def some_old_function(x, y):
+       return x + y
+
+The *category* keyword argument allow you to specify the deprecation warning class of your choice.
+By default, :exc:`DeprecationWarning` is used but you can choose :exc:`FutureWarning`,
+:exc:`PendingDeprecationWarning` or a custom subclass.
+
+.. code-block:: python
+
+   from deprecated import deprecated
+
+
+   @deprecated(category=PendingDeprecationWarning)
+   def some_old_function(x, y):
+       return x + y
+
+The *action* keyword argument allow you to locally change the warning filtering.
+*action* can be one of "error", "ignore", "always", "default", "module", or "once".
+If ``None``, empty or missing, the the global filtering mechanism is used.
+See: `The Warnings Filter`_ in the Python documentation.
+
+.. code-block:: python
+
+   from deprecated import deprecated
+
+
+   @deprecated(action="error")
+   def some_old_function(x, y):
+       return x + y</doc>
+</kw>
+<kw lineno="121" name="List 2 Cmdline" source="C:\Python36\Lib\site-packages\uiautomator2\utils.py">
+<arguments>
+<arg>args: typing.Union[list, tuple]</arg>
+</arguments>
+<doc />
+</kw>
+<kw lineno="357" name="Namedtuple" source="C:\Python36\lib\collections\__init__.py">
+<arguments>
+<arg>typename</arg>
+<arg>field_names</arg>
+<arg>*</arg>
+<arg>verbose=False</arg>
+<arg>rename=False</arg>
+<arg>module=None</arg>
+</arguments>
+<doc>Returns a new subclass of tuple with named fields.
+
+&gt;&gt;&gt; Point = namedtuple('Point', ['x', 'y'])
+&gt;&gt;&gt; Point.__doc__                   # docstring for the new class
+'Point(x, y)'
+&gt;&gt;&gt; p = Point(11, y=22)             # instantiate with positional args or keywords
+&gt;&gt;&gt; p[0] + p[1]                     # indexable like a plain tuple
+33
+&gt;&gt;&gt; x, y = p                        # unpack like a regular tuple
+&gt;&gt;&gt; x, y
+(11, 22)
+&gt;&gt;&gt; p.x + p.y                       # fields also accessible by name
+33
+&gt;&gt;&gt; d = p._asdict()                 # convert to a dictionary
+&gt;&gt;&gt; d['x']
+11
+&gt;&gt;&gt; Point(**d)                      # convert from a dictionary
+Point(x=11, y=22)
+&gt;&gt;&gt; p._replace(x=100)               # _replace() is like str.replace() but targets named fields
+Point(x=100, y=22)</doc>
+</kw>
+<kw lineno="226" name="Process Safe Wrapper" source="C:\Python36\Lib\site-packages\uiautomator2\utils.py">
+<arguments>
+<arg>fn: Callable</arg>
+</arguments>
+<doc>threadsafe for process calls</doc>
+</kw>
+<kw lineno="54" name="Retry" source="C:\Python36\Lib\site-packages\retry\api.py">
+<arguments>
+<arg>exceptions=&lt;class 'Exception'&gt;</arg>
+<arg>tries=-1</arg>
+<arg>delay=0</arg>
+<arg>max_delay=None</arg>
+<arg>backoff=1</arg>
+<arg>jitter=0</arg>
+<arg>logger=&lt;Logger retry.api (WARNING)&gt;</arg>
+</arguments>
+<doc>Returns a retry decorator.
+
+:param exceptions: an exception or a tuple of exceptions to catch. default: Exception.
+:param tries: the maximum number of attempts. default: -1 (infinite).
+:param delay: initial delay between attempts. default: 0.
+:param max_delay: the maximum value of delay. default: None (no limit).
+:param backoff: multiplier applied to delay between attempts. default: 1 (no backoff).
+:param jitter: extra seconds added to delay between attempts. default: 0.
+               fixed if a number, random if a range tuple (min, max)
+:param logger: logger.warning(fmt, error, delay) will be called on failed attempts.
+               default: retry.logging_logger. if None, logging is disabled.
+:returns: a retry decorator.</doc>
+</kw>
+<kw lineno="101" name="Setup Logger" source="C:\Python36\Lib\site-packages\logzero\__init__.py">
+<arguments>
+<arg>name=logzero</arg>
+<arg>logfile=None</arg>
+<arg>level=10</arg>
+<arg>formatter=None</arg>
+<arg>maxBytes=0</arg>
+<arg>backupCount=0</arg>
+<arg>fileLoglevel=None</arg>
+<arg>disableStderrLogger=False</arg>
+<arg>isRootLogger=False</arg>
+<arg>json=False</arg>
+<arg>json_ensure_ascii=False</arg>
+</arguments>
+<doc>Configures and returns a fully configured logger instance, no hassles.
+If a logger with the specified name already exists, it returns the existing instance,
+else creates a new one.
+
+If you set the ``logfile`` parameter with a filename, the logger will save the messages to the logfile,
+but does not rotate by default. If you want to enable log rotation, set both ``maxBytes`` and ``backupCount``.
+
+Usage:
+
+.. code-block:: python
+
+    from logzero import setup_logger
+    logger = setup_logger()
+    logger.info("hello")
+
+:arg string name: Name of the `Logger object &lt;https://docs.python.org/2/library/logging.html#logger-objects&gt;`_. Multiple calls to ``setup_logger()`` with the same name will always return a reference to the same Logger object. (default: ``__name__``)
+:arg string logfile: If set, also write logs to the specified filename.
+:arg int level: Minimum `logging-level &lt;https://docs.python.org/2/library/logging.html#logging-levels&gt;`_ to display (default: ``DEBUG``).
+:arg Formatter formatter: `Python logging Formatter object &lt;https://docs.python.org/2/library/logging.html#formatter-objects&gt;`_ (by default uses the internal LogFormatter).
+:arg int maxBytes: Size of the logfile when rollover should occur. Defaults to 0, rollover never occurs.
+:arg int backupCount: Number of backups to keep. Defaults to 0, rollover never occurs.
+:arg int fileLoglevel: Minimum `logging-level &lt;https://docs.python.org/2/library/logging.html#logging-levels&gt;`_ for the file logger (is not set, it will use the loglevel from the ``level`` argument)
+:arg bool disableStderrLogger: Should the default stderr logger be disabled. Defaults to False.
+:arg bool isRootLogger: If True then returns a root logger. Defaults to False. (see also the `Python docs &lt;https://docs.python.org/3/library/logging.html#logging.getLogger&gt;`_).
+:arg bool json: If True then log in JSON format. Defaults to False. (uses `python-json-logger &lt;https://github.com/madzak/python-json-logger&gt;`_).
+:arg bool json_ensure_ascii: Passed to json.dumps as `ensure_ascii`, default: False (if False: writes utf-8 characters, if True: ascii only representation of special characters - eg. 'Öß')
+:return: A fully configured Python logging `Logger object &lt;https://docs.python.org/2/library/logging.html#logger-objects&gt;`_ you can use with ``.debug("msg")``, etc.</doc>
+</kw>
+<kw lineno="214" name="Thread Safe Wrapper" source="C:\Python36\Lib\site-packages\uiautomator2\utils.py">
+<arguments>
+<arg>fn: Callable</arg>
+</arguments>
+<doc />
+</kw>
+</keywordspec>
